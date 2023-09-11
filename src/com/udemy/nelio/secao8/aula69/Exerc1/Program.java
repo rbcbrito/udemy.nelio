@@ -1,4 +1,4 @@
-package com.udemy.nelio.secao8.aula69;
+package com.udemy.nelio.secao8.aula69.Exerc1;
 
 import java.util.Locale;
 import java.util.Scanner;
