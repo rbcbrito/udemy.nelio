@@ -1,11 +1,16 @@
 package com.udemy.nelio.secao10.aula93.Exerc1;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Program {
 
 	public static void main(String[] args) {
 
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		System.out.println(sdf.format(date));
 		Scanner sc = new Scanner(System.in);
 		
 		Hospede[] quartos = new Hospede[10];
