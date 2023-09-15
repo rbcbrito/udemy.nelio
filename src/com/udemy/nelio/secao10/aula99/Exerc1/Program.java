@@ -33,14 +33,13 @@ public class Program {
 		
 		System.out.print("Enter the employee id that will have salary increase: ");
 		Integer idIncreaseSalary = sc.nextInt();
-		System.out.print("Enter the percentage: ");
-		Double percentage = sc.nextDouble();
-		
-		
-		for(Employee employee : employees) {
-			if(employee.getId().equals(idIncreaseSalary)) {
-				employee.increaseSalary(percentage);
-			}
+		Integer pos = position(employees, idIncreaseSalary);
+		if(pos == null) {
+			System.out.println("This id does not exist!");
+		} else {
+			System.out.print("Enter the percentage: ");
+			Double percentage = sc.nextDouble();
+			employees.get(pos).increaseSalary(percentage);
 		}
 		
 		System.out.println();
@@ -52,5 +51,14 @@ public class Program {
 		sc.close();
 		
 	}
+	
+	public static Integer position(List<Employee> list, int id) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
+	}	
 
 }
